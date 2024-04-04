@@ -1,4 +1,3 @@
-// algolia-search.js
 utils.jq(() => {
   var $inputArea = $("input#search-input");
   if ($inputArea.length === 0) {
