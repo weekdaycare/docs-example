@@ -93,9 +93,9 @@
 <p>使用前需要在 Markdown 文件开头加入：</p>
 <figure class="highlight md"><figcaption><span>_posts/xxx.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="section">mermaid: true</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
 
-<div class="tag-plugin tabs" align="center"id="tab_23"><div class="nav-tabs"><div class="tab active"><a href="#tab_23-1">演示效果</a></div><div class="tab"><a href="#tab_23-2">代码示例</a></div></div><div class="tab-content"><div class="tab-pane active" id="tab_23-1"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A(Section A) --&gt;|option 1| B(Section A)</span><br><span class="line">B --&gt;|option 2| C(Section C)</span><br></pre></td></tr></table></figure>
+<div class="tag-plugin tabs" align="center"id="tab_22"><div class="nav-tabs"><div class="tab active"><a href="#tab_22-1">演示效果</a></div><div class="tab"><a href="#tab_22-2">代码示例</a></div></div><div class="tab-content"><div class="tab-pane active" id="tab_22-1"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A(Section A) --&gt;|option 1| B(Section A)</span><br><span class="line">B --&gt;|option 2| C(Section C)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gitGraph</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br><span class="line">  branch develop</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br><span class="line">  checkout main</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="tab_23-2"><script src="https://gist.github.xaox.cc/weekdaycare/f7769263a4df46b2d75e32684f4ae873.js"></script></div></div></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gitGraph</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br><span class="line">  branch develop</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br><span class="line">  checkout main</span><br><span class="line">  commit</span><br><span class="line">  commit</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="tab_22-2"><script src="https://gist.github.xaox.cc/weekdaycare/f7769263a4df46b2d75e32684f4ae873.js"></script></div></div></div>
 
 <div class="tag-plugin link dis-select"><a class="link-card plain" title="" href="https://mermaid.js.org/intro/" target="_blank" rel="external nofollow noopener noreferrer" cardlink autofill="title,icon"><div class="left"><span class="title">https://mermaid.js.org/intro/</span><span class="cap link footnote">https://mermaid.js.org/intro/</span></div><div class="right"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div></div></a></div>
 </article>
@@ -135,11 +135,11 @@
   };
 
   // required plugins (only load if needs)
-  if (`local_search`) {
+  if (`algolia_search`) {
     ctx.search = {};
-    ctx.search.service = `local_search`;
+    ctx.search.service = `algolia_search`;
     if (ctx.search.service == 'local_search') {
-      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true}`);
       ctx.search[ctx.search.service] = service_obj;
     }
   }
@@ -379,12 +379,17 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.search = {
-      path: `/search.json`,
-    }
-    utils.js('/js/search/local-search.js', { defer: true });
+    window.searchConfig = {
+      appId: 'AIDF40S612', 
+      apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
+      indexName: 'weekdaycare', 
+      hitsPerPage: 100, 
+    };
+    utils.js('https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
+    utils.js('/js/search/algolia-search.js', { defer: true });
   });
-</script><script>
+</script>
+<script>
   window.FPConfig = {
     delay: 0,
     ignoreKeywords: [],

@@ -106,11 +106,11 @@
   };
 
   // required plugins (only load if needs)
-  if (`local_search`) {
+  if (`algolia_search`) {
     ctx.search = {};
-    ctx.search.service = `local_search`;
+    ctx.search.service = `algolia_search`;
     if (ctx.search.service == 'local_search') {
-      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"codeblock":true}`);
       ctx.search[ctx.search.service] = service_obj;
     }
   }
@@ -350,12 +350,17 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    ctx.search = {
-      path: `/search.json`,
-    }
-    utils.js('/js/search/local-search.js', { defer: true });
+    window.searchConfig = {
+      appId: 'AIDF40S612', 
+      apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
+      indexName: 'weekdaycare', 
+      hitsPerPage: 100, 
+    };
+    utils.js('https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
+    utils.js('/js/search/algolia-search.js', { defer: true });
   });
-</script><script>
+</script>
+<script>
   window.FPConfig = {
     delay: 0,
     ignoreKeywords: [],
