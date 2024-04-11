@@ -14,18 +14,21 @@
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="theme-color" content="#f8f8f8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
   <title>Stellar：项目进度和近期计划 - Stellar</title>
 
   
-    <meta property="og:type" content="website">
+    <meta name="description" content="文字表格123graph LR A --&gt; B">
+<meta property="og:type" content="website">
 <meta property="og:title" content="项目进度和近期计划">
 <meta property="og:url" content="http://example.com/todo.html">
 <meta property="og:site_name" content="Stellar">
+<meta property="og:description" content="文字表格123graph LR A --&gt; B">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-14T16:21:32.850Z">
-<meta property="article:modified_time" content="2024-03-14T16:21:32.850Z">
+<meta property="article:published_time" content="2024-04-07T04:32:09.406Z">
+<meta property="article:modified_time" content="2024-04-07T04:32:09.406Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -74,7 +77,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki">文档</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/index.html">Stellar</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2024-03-14T16:21:32.850Z">2024-03-15</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">更新于：<time datetime="2024-04-07T04:32:09.406Z">2024-04-07</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -85,8 +88,8 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><div class="tag-plugin timeline ds-timeline" api="https://api.github.com/repos/xaoxuu/hexo-theme-stellar/issues?labels=todo&per_page=20"></div>
-</article>
+  </div><article class="md-text content"><div class="tag-plugin tabs"id="tab_2"><div class="nav-tabs"><div class="tab active"><a href="#tab_2-1">文字</a></div><div class="tab"><a href="#tab_2-2">表格</a></div></div><div class="tab-content"><div class="tab-pane active" id="tab_2-1"><p>123</p></div><div class="tab-pane" id="tab_2-2"><pre class="mermaid">graph LR
+A --> B</pre></div></div></div></article>
 <div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/articles.html">探索号 🛰️ 文章分享</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/contributors.html">开发者和社区支持</a></div></section></div>
 
 
@@ -364,18 +367,18 @@
 </script>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    window.searchConfig = {
-      appId: 'AIDF40S612', 
-      apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
-      indexName: 'weekdaycare', 
-      hitsPerPage: 100, 
-    };
-    utils.js('https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
-    utils.js('/js/search/algolia-search.js', { defer: true });
-  });
-</script>
-<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      window.searchConfig = {
+        appId: 'AIDF40S612', 
+        apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
+        indexName: 'weekdaycare', 
+        hitsPerPage: 100, 
+      };
+      utils.js('https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
+      utils.js('/js/search/algolia-search.js', { defer: true });
+    });
+  </script>
+  <script>
   window.FPConfig = {
     delay: 0,
     ignoreKeywords: [],
@@ -446,7 +449,7 @@
           spaceBetween: 8,
           centeredSlides: true,
           effect: effect,
-          loop: true,
+          rewind: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -458,6 +461,35 @@
         });
       })
     }
+  });
+</script>
+<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@v9/dist/mermaid.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    var mermaid_config = {
+      startOnLoad: true,
+      theme:
+        "" == "auto" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "neutral",
+      logLevel: 3,
+      themeVariables: {
+        darkMode: true
+      },
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: "linear"
+      },
+      gantt: {
+        axisFormat: "%Y/%m/%d"
+      },
+      sequence: {
+        actorMargin: 50
+      }
+    }
+    mermaid.initialize(mermaid_config);
   });
 </script><script>
   document.addEventListener('DOMContentLoaded', function () {

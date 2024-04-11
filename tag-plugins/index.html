@@ -14,7 +14,8 @@
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="theme-color" content="#f8f8f8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
   <title>Stellar：使用标签组件增强阅读体验 - Stellar</title>
 
@@ -372,18 +373,18 @@
 </script>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    window.searchConfig = {
-      appId: 'AIDF40S612', 
-      apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
-      indexName: 'weekdaycare', 
-      hitsPerPage: 100, 
-    };
-    utils.js('https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
-    utils.js('/js/search/algolia-search.js', { defer: true });
-  });
-</script>
-<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      window.searchConfig = {
+        appId: 'AIDF40S612', 
+        apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
+        indexName: 'weekdaycare', 
+        hitsPerPage: 100, 
+      };
+      utils.js('https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
+      utils.js('/js/search/algolia-search.js', { defer: true });
+    });
+  </script>
+  <script>
   window.FPConfig = {
     delay: 0,
     ignoreKeywords: [],
@@ -454,7 +455,7 @@
           spaceBetween: 8,
           centeredSlides: true,
           effect: effect,
-          loop: true,
+          rewind: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -467,7 +468,8 @@
       })
     }
   });
-</script><script>
+</script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     window.codeElements = document.querySelectorAll('.code');
     if (window.codeElements.length > 0) {

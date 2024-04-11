@@ -14,7 +14,8 @@
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="theme-color" content="#f8f8f8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
   <title>Stellar：使用「katex」插件 - Stellar</title>
 
@@ -91,7 +92,7 @@
 <figure class="highlight md"><figcaption><span>_posts/xxx.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="section">katex: true</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
 
 
-<div class="tag-plugin tabs" align="center"id="tab_21"><div class="nav-tabs"><div class="tab active"><a href="#tab_21-1">演示效果</a></div><div class="tab"><a href="#tab_21-2">代码示例</a></div></div><div class="tab-content"><div class="tab-pane active" id="tab_21-1"><p>$$\sum_{i&#x3D;0}^n i^2 &#x3D; \frac{(n^2+n)(2n+1)}{6}$$</p></div><div class="tab-pane" id="tab_21-2"><figure class="highlight plaintext"><figcaption><span>_posts/xxx.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_&#123;i=0&#125;^n i^2 = \frac&#123;(n^2+n)(2n+1)&#125;&#123;6&#125;$$</span><br></pre></td></tr></table></figure></div></div></div>
+<div class="tag-plugin tabs" align="center"id="tab_23"><div class="nav-tabs"><div class="tab active"><a href="#tab_23-1">演示效果</a></div><div class="tab"><a href="#tab_23-2">代码示例</a></div></div><div class="tab-content"><div class="tab-pane active" id="tab_23-1"><p>$$\sum_{i&#x3D;0}^n i^2 &#x3D; \frac{(n^2+n)(2n+1)}{6}$$</p></div><div class="tab-pane" id="tab_23-2"><figure class="highlight plaintext"><figcaption><span>_posts/xxx.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_&#123;i=0&#125;^n i^2 = \frac&#123;(n^2+n)(2n+1)&#125;&#123;6&#125;$$</span><br></pre></td></tr></table></figure></div></div></div>
 </article>
 <div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/authors.html">一站多作者配置</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/third-party/mathjax.html">使用「mathjax」插件</a></div></section></div>
 
@@ -370,18 +371,18 @@
 </script>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    window.searchConfig = {
-      appId: 'AIDF40S612', 
-      apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
-      indexName: 'weekdaycare', 
-      hitsPerPage: 100, 
-    };
-    utils.js('https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
-    utils.js('/js/search/algolia-search.js', { defer: true });
-  });
-</script>
-<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      window.searchConfig = {
+        appId: 'AIDF40S612', 
+        apiKey: '7ee4e2d3c61bbf8a826cb3e0ab74b0cf', 
+        indexName: 'weekdaycare', 
+        hitsPerPage: 100, 
+      };
+      utils.js('https://gcore.jsdelivr.net/algoliasearch/3/algoliasearch.min.js', { defer: true });
+      utils.js('/js/search/algolia-search.js', { defer: true });
+    });
+  </script>
+  <script>
   window.FPConfig = {
     delay: 0,
     ignoreKeywords: [],
@@ -452,7 +453,7 @@
           spaceBetween: 8,
           centeredSlides: true,
           effect: effect,
-          loop: true,
+          rewind: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -465,7 +466,8 @@
       })
     }
   });
-</script><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
 <script defer src="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
 <script defer src="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"onload="renderMathInElement(document.body);"></script>
 <script>
