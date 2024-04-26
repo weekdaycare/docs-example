@@ -9,7 +9,7 @@ utils.jq(() => {
   var client = algoliasearch(window.searchConfig.appId, window.searchConfig.apiKey);
   var index = client.initIndex(window.searchConfig.indexName);
 
-  function filterResultsByPath(hits, filterPath) {
+  function filterResults(hits, filterPath) {
     if (!filterPath || filterPath === '/') return hits;
     var regex = new RegExp(filterPath);
     return hits.filter(hit => regex.test(hit.url));
@@ -51,7 +51,7 @@ utils.jq(() => {
       highlightPostTag: '</span>',
       restrictSearchableAttributes: ['content']
     }).then(function(responses) {
-      displayResults(filterResultsByPath(responses.hits, filterPath));
+      displayResults(filterResults(responses.hits, filterPath));
     });
   });
 
